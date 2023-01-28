@@ -27,25 +27,27 @@ Về mặt cấu trúc,  **Clean architecture**  gồm 3 thành phần chính:
 `Entities` là các model
 ```swift
 class GithubRepo: Mappable {
-	var id: Int?
-	var name: String?
-	var fullname: String?
-	...
+    var id: Int?
+    var name: String?
+    var fullname: String?
 }
 ```
+
 `UseCase` là nơi xử lý các business logic: Nó có thể sử dụng đến `Repository (ở tầng Domain)` để triển khai các task liên quan đến `api, local DB, backend...` hoặc **không** nếu như các use cases là các task không liên quan đến api, db. Tại UseCase sẽ inject **Repository** của tầng `Platform` hoặc **không**. Như trong ví dụ này thì Repository đã được `inject` vào UseCase bằng lib `Factory`.
 
 ```swift
 protocol GithubRepoUseCaseType {
-	func searchRepo(query: String) -> Observable<[GithubRepo]>
+    func searchRepo(query: String) -> Observable<[GithubRepo]>
 }
 
 struct GithubRepoUseCase: GithubRepoRepositoryType {
-	@Injected(\.gitHubRepoRepository) private var repository
-	
-	func searchRepo(query: String) -> Observable<[GithubRepo]> {
-		return repository.searchRepo(query: query)
-	}
+    
+    @Injected(\.gitHubRepoRepository) private var repository
+    
+    func searchRepo(query: String) -> Observable<[GithubRepo]> {
+        return repository.searchRepo(query: query)
+    }
+
 }
 ```
 **Platform**

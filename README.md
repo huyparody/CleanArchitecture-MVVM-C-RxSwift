@@ -83,7 +83,7 @@ struct GithubRepoRepository: GithubRepoRepositoryType {
 
 ![enter image description here](https://github.com/sergdort/CleanArchitectureRxSwift/blob/master/Architecture/MVVMPattern.png?raw=true)
 
-`ViewModel`  sẽ đóng vai trò chuẩn bị và chung chuyển dữ liệu. Nó sẽ có ba thành phần chính gồm:
+`ViewModel`  sẽ đóng vai trò chuẩn bị và trung chuyển dữ liệu. Nó sẽ có ba thành phần chính gồm:
 
 -   **Input**: tập các trigger đầu vào được tiếp nhận từ View.
 -   **Output**: tập các giá trị đầu ra để thực hiện bind lên View.

@@ -8,8 +8,9 @@
 
 import Foundation
 import Factory
+import XCoordinator
 
-extension Container {
+extension SharedContainer {
     var gitHubRepoRepository: Factory<GithubRepoRepository> {
         factory {
             GithubRepoRepository()
@@ -17,8 +18,12 @@ extension Container {
     }
     
     var gitHubRepoUseCase: Factory<GithubRepoUseCase> {
+        factory { GithubRepoUseCase()}
+    }
+    
+    var githubCoordinator: Factory<UnownedRouter<GithubRepoRoute>?> {
         factory {
-            GithubRepoUseCase()
+            nil
         }
     }
 }

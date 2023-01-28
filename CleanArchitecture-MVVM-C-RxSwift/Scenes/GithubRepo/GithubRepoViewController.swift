@@ -37,15 +37,21 @@ class GithubRepoViewController: EducaViewController<GithubRepoViewModel> {
     }
     
     override func bindViewModel() {
-        let input = GithubRepoViewModel.Input(triggerSearch: searchController.searchBar.rx.text.orEmpty.asDriver())
+        let input = GithubRepoViewModel.Input(triggerSearch:
+                                                searchController.searchBar.rx.text.orEmpty.asDriver(),
+                                              triggerSelectIndexPath: tableView.rx.modelAndIndexSelected(GithubRepo.self).asDriver())
         let output = viewModel.transform(input: input)
         
         output.repos
             .drive(tableView.rx.items) { tableView, index, element in
                 let cell = tableView.dequeueReusableCell(type: GithubRepoTableViewCell.self, forIndexPath: IndexPath(index: index))
-                cell.textLabel?.text = element.name
+                cell.textLabel?.text = element.fullname
                 return cell
             }
+            .disposed(by: bag)
+        
+        output.select
+            .drive()
             .disposed(by: bag)
     }
 }

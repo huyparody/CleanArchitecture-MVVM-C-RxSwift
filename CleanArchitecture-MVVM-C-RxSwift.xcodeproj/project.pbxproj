@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C36B0F5E29855EF9008ECB49 /* PresentationTestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36B0F5929855EF9008ECB49 /* PresentationTestCoordinator.swift */; };
+		C36B0F5F29855EF9008ECB49 /* PresentationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36B0F5A29855EF9008ECB49 /* PresentationTestViewController.swift */; };
+		C36B0F6129855EF9008ECB49 /* PresentationTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36B0F5C29855EF9008ECB49 /* PresentationTestViewModel.swift */; };
+		C36B0F6229855EF9008ECB49 /* PresentationTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36B0F5D29855EF9008ECB49 /* PresentationTestViewController.xib */; };
 		C3A9EFF42985035200DD3534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EFF32985035200DD3534 /* AppDelegate.swift */; };
 		C3A9EFF82985035300DD3534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A9EFF72985035300DD3534 /* Assets.xcassets */; };
 		C3A9EFFB2985035300DD3534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A9EFF92985035300DD3534 /* LaunchScreen.storyboard */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C36B0F5929855EF9008ECB49 /* PresentationTestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTestCoordinator.swift; sourceTree = "<group>"; };
+		C36B0F5A29855EF9008ECB49 /* PresentationTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTestViewController.swift; sourceTree = "<group>"; };
+		C36B0F5C29855EF9008ECB49 /* PresentationTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTestViewModel.swift; sourceTree = "<group>"; };
+		C36B0F5D29855EF9008ECB49 /* PresentationTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentationTestViewController.xib; sourceTree = "<group>"; };
 		C3A9EFF02985035200DD3534 /* CleanArchitecture-MVVM-C-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CleanArchitecture-MVVM-C-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A9EFF32985035200DD3534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A9EFF72985035300DD3534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +112,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C36B0F5829855EE6008ECB49 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C36B0F5929855EF9008ECB49 /* PresentationTestCoordinator.swift */,
+				C36B0F5A29855EF9008ECB49 /* PresentationTestViewController.swift */,
+				C36B0F5C29855EF9008ECB49 /* PresentationTestViewModel.swift */,
+				C36B0F5D29855EF9008ECB49 /* PresentationTestViewController.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		C3A9EFE72985035200DD3534 = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +273,7 @@
 		C3A9F043298512C100DD3534 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C36B0F5829855EE6008ECB49 /* Test */,
 				C3A9F044298512C500DD3534 /* GithubRepo */,
 			);
 			path = Scenes;
@@ -393,6 +413,7 @@
 			files = (
 				C3A9F05529851F1700DD3534 /* GithubRepoTableViewCell.xib in Resources */,
 				C3A9EFF82985035300DD3534 /* Assets.xcassets in Resources */,
+				C36B0F6229855EF9008ECB49 /* PresentationTestViewController.xib in Resources */,
 				C3A9F04E298512D300DD3534 /* GithubRepoViewController.xib in Resources */,
 				C3A9EFFB2985035300DD3534 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -423,9 +444,12 @@
 				C3A9F02C298506F500DD3534 /* AppDelegate+Injection.swift in Sources */,
 				C3A9F02F29850A8500DD3534 /* APIError.swift in Sources */,
 				C3A9F03C29850EA500DD3534 /* GithubRepoRepository.swift in Sources */,
+				C36B0F6129855EF9008ECB49 /* PresentationTestViewModel.swift in Sources */,
+				C36B0F5E29855EF9008ECB49 /* PresentationTestCoordinator.swift in Sources */,
 				C3A9F04B298512D300DD3534 /* GithubRepoViewController.swift in Sources */,
 				C3A9F05429851F1700DD3534 /* GithubRepoTableViewCell.swift in Sources */,
 				C3A9F03E29850EE800DD3534 /* GithubRepoModel.swift in Sources */,
+				C36B0F5F29855EF9008ECB49 /* PresentationTestViewController.swift in Sources */,
 				C3A9EFF42985035200DD3534 /* AppDelegate.swift in Sources */,
 				C3A9F04D298512D300DD3534 /* GithubRepoViewModel.swift in Sources */,
 				C3A9F03829850D9200DD3534 /* UserUtils.swift in Sources */,
@@ -609,6 +633,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,6 +661,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

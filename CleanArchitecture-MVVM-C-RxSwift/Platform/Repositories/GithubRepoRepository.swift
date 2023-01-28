@@ -31,11 +31,8 @@ struct GithubRepoRepository: GithubRepoRepositoryType {
                 return response.githubRepos ?? []
             })
             .asObservable()
-            .catchAndReturnElement([], handler: { error in
-                
-            })
+            .catchAndReturnElement([])
             .share()
-        
         
     }
     

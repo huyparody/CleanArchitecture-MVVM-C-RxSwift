@@ -20,18 +20,22 @@ class GithubRepoViewModel: EducaViewModel {
     
     struct Input {
         let triggerSearch: Driver<String>
+        let triggerSelectIndexPath: Driver<(GithubRepo, IndexPath)>
     }
     
     struct Output {
         let repos: Driver<[GithubRepo]>
+        let select: Driver<Void>
     }
     
     @Injected(\.gitHubRepoUseCase) private var useCase
-    private let router: UnownedRouter<GithubRepoRoute>
+    @Injected(\.githubCoordinator) private var router
     
-    init(router: UnownedRouter<GithubRepoRoute>) {
-        self.router = router
-    }
+//    private let router: UnownedRouter<GithubRepoRoute>
+//
+//    init(router: UnownedRouter<GithubRepoRoute>) {
+//        self.router = router
+//    }
     
     func transform(input: Input) -> Output {
         
@@ -45,6 +49,12 @@ class GithubRepoViewModel: EducaViewModel {
                     .asDriverOnErrorJustComplete()
             }
         
-        return Output(repos: repos)
+        let select = input.triggerSelectIndexPath
+            .do(onNext: { repo, indexPath in
+                self.router?.trigger(.test(repoName: repo.fullname ?? ""))
+            })
+            .mapToVoid()
+        
+        return Output(repos: repos, select: select)
     }
 }

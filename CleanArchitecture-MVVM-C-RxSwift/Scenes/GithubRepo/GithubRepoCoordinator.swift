@@ -12,9 +12,11 @@ import Foundation
 import XCoordinator
 import UIKit
 import BaseCore
+import Factory
 
 enum GithubRepoRoute: Route {
     case main
+    case test(repoName: String)
 }
 
 class GithubRepoCoordinator: NavigationCoordinator<GithubRepoRoute> {
@@ -27,8 +29,17 @@ class GithubRepoCoordinator: NavigationCoordinator<GithubRepoRoute> {
     override func prepareTransition(for route: GithubRepoRoute) -> NavigationTransition {
         switch route {
         case .main:
+            Container.shared.githubCoordinator.register {
+                self.unownedRouter
+            }
             let vc = GithubRepoViewController()
-            let vm = GithubRepoViewModel(router: unownedRouter)
+            let vm = GithubRepoViewModel()
+            vc.bind(to: vm)
+            return .push(vc)
+        case .test(let repoName):
+            let vc = PresentationTestViewController()
+            let vm = PresentationTestViewModel()
+            vm.repoName = repoName
             vc.bind(to: vm)
             return .push(vc)
         }

@@ -248,7 +248,7 @@ class GithubRepoViewController: EducaViewController<GithubRepoViewModel> {
 Luồng chạy thông qua `Sequence Diagram`:
 ```mermaid
 sequenceDiagram
-GithubRepoViewController ->> GithubRepoViewModel: 1. Driver.just(())
+GithubRepoViewController ->> GithubRepoViewModel: 1. triggerSearch:
 GithubRepoViewModel ->> GithubRepoUseCase: 2. searchRepo(query:) (UseCase)
 GithubRepoUseCase ->> GithubRepoRepository: 3. searchRepo(query:) (Repository)
 GithubRepoRepository ->> API: 4. request()

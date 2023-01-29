@@ -24,6 +24,7 @@ Về mặt cấu trúc,  **Clean architecture**  gồm 3 thành phần chính:
 
 ## Chi tiết
 **Domain**
+
 `Entities` là các model
 ```swift
 class GithubRepo: Mappable {
@@ -51,6 +52,7 @@ struct GithubRepoUseCase: GithubRepoRepositoryType {
 }
 ```
 **Platform**
+
 Tại `Platform` chúng ta sẽ tiến hành triển khai các task như `call api, backend, db` như đã nói ở trên, và tiếp nhận data thông qua một **Repository**. Repository chính là nơi triển khai chi tiết (concrete implementation) các phần cụ thể của những use cases.
 
 ```swift
@@ -79,6 +81,7 @@ struct GithubRepoRepository: GithubRepoRepositoryType {
 }
 ```
 **Application**
+
 `Application` là tầng chúng ta sẽ triển khai design pattern `MVVM-C` cùng với `RxSwift`, khiến việc binding trở nên dễ dàng hơn. Chữ `C` trong cụm từ `MVVM-C` mình sẽ giải thích bên dưới. Tầng `Application` sẽ chỉ dùng đến `UseCase` của `Domain` mà không quan tâm đến những tầng khác.
 
 ![enter image description here](https://github.com/sergdort/CleanArchitectureRxSwift/blob/master/Architecture/MVVMPattern.png?raw=true)
@@ -237,8 +240,6 @@ class GithubRepoViewController: EducaViewController<GithubRepoViewModel> {
     }
 }
 ```
-
-
 
 
 

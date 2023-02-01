@@ -41,9 +41,9 @@ protocol GithubRepoUseCaseType {
     func searchRepo(query: String) -> Observable<[GithubRepo]>
 }
 
-struct GithubRepoUseCase: GithubRepoRepositoryType {
+class GithubRepoUseCase: GithubRepoRepositoryType {
     
-    @Injected(\.gitHubRepoRepository) private var repository
+    @LazyInjected(\.gitHubRepoRepository) private var repository
     
     func searchRepo(query: String) -> Observable<[GithubRepo]> {
         return repository.searchRepo(query: query)
@@ -60,7 +60,7 @@ protocol GithubRepoRepositoryType {
     func searchRepo(query: String) -> Observable<[GithubRepo]>
 }
 
-struct GithubRepoRepository: GithubRepoRepositoryType {
+class GithubRepoRepository: GithubRepoRepositoryType {
     func searchRepo(query: String) -> Observable<[GithubRepo]> {
         let param: [String: Any] = [
             "q": query,
@@ -116,8 +116,8 @@ class GithubRepoViewModel: EducaViewModel {
         let select: Driver<Void>
     }
     
-    @Injected(\.gitHubRepoUseCase) private var useCase
-    @Injected(\.githubCoordinator) private var router
+    @LazyInjected(\.gitHubRepoUseCase) private var useCase
+    @LazyInjected(\.githubCoordinator) private var router
     
     func transform(input: Input) -> Output {
         

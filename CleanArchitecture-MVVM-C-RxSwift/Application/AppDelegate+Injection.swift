@@ -18,7 +18,9 @@ extension SharedContainer {
     }
     
     var gitHubRepoUseCase: Factory<GithubRepoUseCase> {
-        factory { GithubRepoUseCase()}
+        factory {
+            GithubRepoUseCase()
+        }
     }
     
     var githubCoordinator: Factory<UnownedRouter<GithubRepoRoute>?> {

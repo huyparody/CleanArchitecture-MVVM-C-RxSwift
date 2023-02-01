@@ -14,9 +14,9 @@ protocol GithubRepoUseCaseType {
     func searchRepo(query: String) -> Observable<[GithubRepo]>
 }
 
-struct GithubRepoUseCase: GithubRepoRepositoryType {
+class GithubRepoUseCase: GithubRepoRepositoryType {
     
-    @Injected(\.gitHubRepoRepository) private var repository
+    @LazyInjected(\.gitHubRepoRepository) private var repository
     
     func searchRepo(query: String) -> Observable<[GithubRepo]> {
         return repository.searchRepo(query: query)

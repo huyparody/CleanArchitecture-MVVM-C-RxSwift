@@ -28,8 +28,8 @@ class GithubRepoViewModel: EducaViewModel {
         let select: Driver<Void>
     }
     
-    @Injected(\.gitHubRepoUseCase) private var useCase
-    @Injected(\.githubCoordinator) private var router
+    @LazyInjected(\.gitHubRepoUseCase) private var useCase
+    @LazyInjected(\.githubCoordinator) private var router
     
 //    private let router: UnownedRouter<GithubRepoRoute>
 //

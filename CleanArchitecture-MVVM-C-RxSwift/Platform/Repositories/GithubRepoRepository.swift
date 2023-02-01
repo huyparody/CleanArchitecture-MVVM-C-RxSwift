@@ -14,7 +14,7 @@ protocol GithubRepoRepositoryType {
     func searchRepo(query: String) -> Observable<[GithubRepo]>
 }
 
-struct GithubRepoRepository: GithubRepoRepositoryType {
+class GithubRepoRepository: GithubRepoRepositoryType {
     
     func searchRepo(query: String) -> Observable<[GithubRepo]> {
         

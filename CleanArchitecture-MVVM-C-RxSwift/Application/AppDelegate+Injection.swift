@@ -12,19 +12,19 @@ import XCoordinator
 
 extension SharedContainer {
     var gitHubRepoRepository: Factory<GithubRepoRepository> {
-        factory {
+        makes {
             GithubRepoRepository()
         }
     }
     
     var gitHubRepoUseCase: Factory<GithubRepoUseCase> {
-        factory {
+        makes {
             GithubRepoUseCase()
         }
     }
     
     var githubCoordinator: Factory<UnownedRouter<GithubRepoRoute>?> {
-        factory {
+        makes {
             nil
         }
     }

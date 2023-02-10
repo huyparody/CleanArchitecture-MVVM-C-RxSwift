@@ -4,6 +4,16 @@ options:
   deploymentTarget:
     iOS: 13.0
 targets:
+  CleanArchitecture-MVVM-C-RxSwiftTests:
+    platform: iOS
+    type: bundle.unit-test
+    sources:
+      - path: CleanArchitecture-MVVM-C-RxSwiftTests
+  CleanArchitecture-MVVM-C-RxSwiftUITests:
+    platform: iOS
+    type: bundle.ui-testing
+    sources:
+      - path: CleanArchitecture-MVVM-C-RxSwiftUITests
   CleanArchitecture-MVVM-C-RxSwift:
     info:
       path: CleanArchitecture-MVVM-C-RxSwift/Info.plist

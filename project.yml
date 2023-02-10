@@ -4,19 +4,35 @@ options:
   deploymentTarget:
     iOS: 13.0
 targets:
+
+# Tests
   CleanArchitecture-MVVM-C-RxSwiftTests:
     platform: iOS
     type: bundle.unit-test
     sources:
       - path: CleanArchitecture-MVVM-C-RxSwiftTests
+    dependencies:
+      - target: CleanArchitecture-MVVM-C-RxSwift
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+             
+# UI Tests
   CleanArchitecture-MVVM-C-RxSwiftUITests:
     platform: iOS
     type: bundle.ui-testing
     sources:
       - path: CleanArchitecture-MVVM-C-RxSwiftUITests
+    dependencies:
+      - target: CleanArchitecture-MVVM-C-RxSwift
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+      
+# Main project
   CleanArchitecture-MVVM-C-RxSwift:
     info:
-      path: CleanArchitecture-MVVM-C-RxSwift/Info.plist
+      path: CleanArchitecture-MVVM-C-RxSwift/Application/Info.plist
       properties:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         UILaunchStoryboardName: LaunchScreen
@@ -26,6 +42,12 @@ targets:
       - path: CleanArchitecture-MVVM-C-RxSwift
     dependencies:
       - package: BaseCore
+    schemes:
+      testTargets:
+        - CleanArchitecture-MVVM-C-RxSwiftTests
+        - CleanArchitecture-MVVM-C-RxSwiftUITests
+
+ # SwiftPackageManager       
 packages:
   BaseCore:
     url: ssh://git@gitlab.edupiakid.vn:6969/huytd/base-core-ios.git

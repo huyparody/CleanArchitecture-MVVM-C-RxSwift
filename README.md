@@ -1,4 +1,6 @@
 # iOS: Clean Architecture với RxSwift và MVVM-C
+Project sử dụng `XcodeGen` để tạo file `.xcodeproj`
+> Cài đặt: Clone hoặc download, sau đó cd đến folder project và chạy lệnh `./setup.sh`
 ## Giới thiệu
 **Clean Architecture** là một business architecture, nó tách rời những xử lý nghiệp vụ khỏi **UI** và **framework**. Clean Architecture phân rõ vai trò và trách nhiệm của từng layer trong kiến trúc của mình.
 

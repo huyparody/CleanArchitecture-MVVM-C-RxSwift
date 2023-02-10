@@ -1,0 +1,22 @@
+name: CleanArchitecture-MVVM-C-RxSwift
+options:
+  bundleIdPrefix: com.huyparody
+  deploymentTarget:
+    iOS: 13.0
+targets:
+  CleanArchitecture-MVVM-C-RxSwift:
+    info:
+      path: CleanArchitecture-MVVM-C-RxSwift/Info.plist
+      properties:
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UILaunchStoryboardName: LaunchScreen
+    type: application
+    platform: iOS
+    sources:
+      - path: CleanArchitecture-MVVM-C-RxSwift
+    dependencies:
+      - package: BaseCore
+packages:
+  BaseCore:
+    url: ssh://git@gitlab.edupiakid.vn:6969/huytd/base-core-ios.git
+    branch: master

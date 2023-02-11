@@ -9,15 +9,17 @@
 import Foundation
 import Factory
 import XCoordinator
+import BaseCore
 
-extension SharedContainer {
-    var gitHubRepoRepository: Factory<GithubRepoRepository> {
+extension BaseCore.FactoryContainer {
+    
+    var gitHubRepoRepository: Factory<GithubRepoRepositoryType> {
         makes {
             GithubRepoRepository()
         }
     }
     
-    var gitHubRepoUseCase: Factory<GithubRepoUseCase> {
+    var gitHubRepoUseCase: Factory<GithubRepoUseCaseType> {
         makes {
             GithubRepoUseCase()
         }

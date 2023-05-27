@@ -36,7 +36,7 @@ class GithubRepo: Mappable {
 }
 ```
 
-`UseCase` là nơi xử lý các business logic: Nó có thể sử dụng đến `Repository (ở tầng Domain)` để triển khai các task liên quan đến `api, local DB, backend...` hoặc **không** nếu như các use cases là các task không liên quan đến api, db. Tại UseCase sẽ inject **Repository** của tầng `Platform` hoặc **không**. Như trong ví dụ này thì Repository đã được `inject` vào UseCase bằng lib `Factory`.
+`UseCase` là nơi xử lý các business logic: Nó có thể sử dụng đến `Repository (ở tầng Platform)` để triển khai các task liên quan đến `api, local DB, backend...` hoặc **không** nếu như các use cases là các task không liên quan đến api, db. Tại UseCase sẽ inject **Repository** của tầng `Platform` hoặc **không**. Như trong ví dụ này thì Repository đã được `inject` vào UseCase bằng lib `Factory`.
 
 ```swift
 protocol GithubRepoUseCaseType {

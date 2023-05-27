@@ -14,19 +14,19 @@ import BaseCore
 extension BaseCore.FactoryContainer {
     
     var gitHubRepoRepository: Factory<GithubRepoRepositoryType> {
-        makes {
+        self {
             GithubRepoRepository()
         }
     }
     
     var gitHubRepoUseCase: Factory<GithubRepoUseCaseType> {
-        makes {
+        self {
             GithubRepoUseCase()
         }
     }
     
     var githubCoordinator: Factory<UnownedRouter<GithubRepoRoute>?> {
-        makes {
+        self {
             nil
         }
     }
